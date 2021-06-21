@@ -27,6 +27,61 @@
        ELSE
            DISPLAY "YOU CAN'T VOTE"
        END-IF
+       
+
+       IF AGE LESS THAN 5 THEN
+           DISPLAY "Stay Home"
+
+       END-IF
 
 
+       IF AGE = 5 THEN
+           DISPLAY "Go to kindergarten"
+       END-IF
+
+       IF AGE > 5 AND AGE <18 THEN
+           COMPUTE GRADE = AGE - 5
+           DISPLAY "Go to grade " GRADE
+       END-IF
+
+       IF AGE GREATER THAN OR EQUAL TO 18
+           DISPLAY "GO TO COLLEGE"
+       END-IF
+
+       IF SCORE IS PassingScore THEN
+           DISPLAY " YOU PASSED"
+       ELSE 
+           DISPLAY " YOU FAILED"
+       END-IF
+
+
+       IF SCORE IS NOT NUMERIC THEN
+           DISPLAY "not a number"
+       END-IF
+
+
+       IF AGE > 18 THEN
+           SET CANVOTE TO TRUE
+       ELSE
+           SET CANTVOTE TO TRUE
+
+       END-IF
+       DISPLAY "VOTE " CANVOTEFLAG
+
+
+
+       DISPLAY "ENTER SINGLE NUMBER OR X TO EXIT"
+       ACCEPT TESTNUMBER
+       PERFORM UNTIL NOT ANUMBER
+           EVALUATE TRUE
+               WHEN ISPRIME DISPLAY "PRIME"
+               WHEN ISODD DISPLAY "ODD"
+               WHEN ISEVEN DISPLAY "EVEN"
+               WHEN LESSTHEN5 DISPLAY "LESS THEN 5"
+               WHEN OTHER DISPLAY "DEFAULT"  
+
+           END-EVALUATE
+           ACCEPT TESTNUMBER
+       END-PERFORM
+       
        STOP RUN.
